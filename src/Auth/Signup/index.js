@@ -16,7 +16,7 @@ function Signup() {
     const handleSubmit  = (e)  => {
         e.preventDefault()
         if (document.querySelector('#txtname').value  && document.querySelector('#txtdateofbirth').value && document.querySelector('#txtpassword').value &&  resultEmail && resultUsername) {
-            axios.post('https://uwd-node-js.vercel.app/v1/auth/register', {
+            axios.post('http://localhost:8000/auth/signup', {
             username : document.querySelector('#txtusername').value,
             name : document.querySelector('#txtname').value,
             password : document.querySelector('#txtpassword').value,

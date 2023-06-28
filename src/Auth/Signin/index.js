@@ -18,6 +18,7 @@ function Login() {
             password : document.querySelector('#txtpassword').value
         })
             .then(res => {
+                console.log(res.data);
                 if (res.data.token) {
                     localStorage.setItem('current-user', JSON.stringify({token : res.data.token}))
                     setNotifi({status : 'none', message : '', isAuth : true})
