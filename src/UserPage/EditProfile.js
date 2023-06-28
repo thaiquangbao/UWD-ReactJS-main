@@ -71,7 +71,7 @@ function EditProfilePage({user}) {
             setTimeout(() => {setNotifi({status : 'warning', message : 'Please change information before saving changes'})}, 50);
         } else {
             if (name != '') {
-                axios.put('https://uwd-node-js.vercel.app/v1/user/update-profile', {name : name, date  : date, location : location, bio : bio} ,{headers : {token :  'Bearer ' + JSON.parse(localStorage.getItem('current-user')).token}})
+                axios.put('http://localhost:8000/user/update-profile', {name : name, date  : date, location : location, bio : bio} ,{headers : {token :  'Bearer ' + JSON.parse(localStorage.getItem('current-user')).token}})
                     .then(res => {
                         if(res.data.code == 200) {
                             window.location.reload()
@@ -90,7 +90,7 @@ function EditProfilePage({user}) {
     }
     
     const handleDeleteUser = () => {
-        axios.delete('https://uwd-node-js.vercel.app/v1/user/delete-user', {headers : {token :  'Bearer ' + JSON.parse(localStorage.getItem('current-user')).token}})
+        axios.delete('http://localhost:8000/user/delete-user', {headers : {token :  'Bearer ' + JSON.parse(localStorage.getItem('current-user')).token}})
             .then(res => {
                 if(res.data.code == 200) {
                     localStorage.removeItem('current-user')
