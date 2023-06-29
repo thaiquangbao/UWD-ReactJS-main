@@ -64,7 +64,7 @@ function Header({user}) {
                     <Link className='link' to='/home'><div className='menu-item'>Home</div></Link>
                     <div className='menu-item' onMouseOver={() => handleOverMenu('sub-wed')} onMouseOut={() => handleOutMenu('sub-wed')}>Web Development<i className='bx bx-chevron-down'></i>
                         <div className='sub-menu-area sub-wed'>
-                            <Link className='link' to='/fullStack'> <div className='sub-menu-item'>Full Stack</div></Link>    
+                            <Link className='link' to='webdev/fullStack'> <div className='sub-menu-item'>Full Stack</div></Link>    
                             <div className='sub-menu-item'>Front End</div>
                             <div className='sub-menu-item'>Other</div>
 

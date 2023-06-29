@@ -5,6 +5,7 @@ import Welcome from './WelcomePage';
 import Signin from './Auth/Signin';
 import Signup from './Auth/Signup';
 import HomePage from './HomePage';
+import WebDev from './WebDev/FullStack';
 import EditProfilePage from './UserPage/EditProfile';
 import GeneralPage from './UserPage/General';
 import PasswordPage from './UserPage/Password';
@@ -60,6 +61,7 @@ function App() {
               <Route path='/signup/new' element={<Signup />}/>
               <Route path='/signin' element={<Signin />}/>
               <Route path='/home' element={<CommonLayout children={<HomePage user={currentUser}/>} />}/>
+              <Route path='/webdev/fullStack' element={<CommonLayout children={<WebDev user={currentUser}/> }/>}/>
               <Route path='/account/edit-profile' element={<CommonLayout children={<EditProfilePage user={currentUser}/>} />} />
               <Route path='/account/general' element={<CommonLayout children={<GeneralPage user={currentUser}/>} />} />
               <Route path='/account/password' element={<CommonLayout children={<PasswordPage user={currentUser}/>} />} />
