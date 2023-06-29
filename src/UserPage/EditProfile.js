@@ -34,7 +34,7 @@ function EditProfilePage({user}) {
             const formData = new FormData();
             const file = imageUser.current.files[0]
             formData.append('image', file)
-            axios.post('https://uwd-node-js.vercel.app/v1/user/upload-new-avatar', formData, {headers : {token :  'Bearer ' + JSON.parse(localStorage.getItem('current-user')).token}})
+            axios.post('http://localhost:8000/user/upload-avartar', formData, {headers : {token :  'Bearer ' + JSON.parse(localStorage.getItem('current-user')).token}})
                 .then(res => {
                     if(res.data.code == 200) {
                         window.location.reload()
@@ -48,7 +48,7 @@ function EditProfilePage({user}) {
 
     const handleDeleteAvatar = () => {
         if (currentUser.URL_Avatar != '') {
-            axios.delete('https://uwd-node-js.vercel.app/v1/user/delete-avatar', {headers : {token :  'Bearer ' + JSON.parse(localStorage.getItem('current-user')).token}})
+            axios.delete('http://localhost:8000/user/delete-avartar', {headers : {token :  'Bearer ' + JSON.parse(localStorage.getItem('current-user')).token}})
                 .then(res => {
                     if(res.data.code == 200) {
                         window.location.reload()
