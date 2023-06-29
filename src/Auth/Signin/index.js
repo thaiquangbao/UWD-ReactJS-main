@@ -13,7 +13,7 @@ function Login() {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        axios.post('http://localhost:8000/auth/signin', {
+        axios.post('https://uwd-node-js-wine.vercel.app/auth/signin', {
             username : document.querySelector('#txtusername').value,
             password : document.querySelector('#txtpassword').value
         })

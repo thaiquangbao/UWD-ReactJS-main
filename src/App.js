@@ -29,7 +29,7 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       if (user) {
-        await axios.get('http://localhost:8000/user/home', { headers: { token: `Bearer ${user.token}` } })
+        await axios.get('https://uwd-node-js-wine.vercel.app/user/home', { headers: { token: `Bearer ${user.token}` } })
           .then (res => {
             if (res.data.code === 200) {
               setCurrentUser(res.data.currentUser._doc);

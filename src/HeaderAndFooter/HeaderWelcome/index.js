@@ -11,7 +11,7 @@ function HeaderWelcome() {
     const [isLogged, setIsLogged] = useState(false)
     useEffect(() => {
         if (currentUser) {
-            axios.get('http://localhost:8000/auth/check-token?token='+currentUser.token)
+            axios.get('https://uwd-node-js-wine.vercel.app/auth/check-token?token='+currentUser.token)
                 .then(res => {
                     if (res.data.message) {
                         setIsLogged(true)
